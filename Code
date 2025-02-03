@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site gratuit de matrimoniale pentru a găsi sufletul pereche!">
+    <title>Matrimoniale Online</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #f8f9fa; }
+        .container { width: 90%; max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        input, button { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background: #218838; }
+        .profile-list { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Matrimoniale Online</h1>
+        <p>Înscrie-te pentru a găsi sufletul pereche!</p>
+        <input type="text" id="name" placeholder="Numele tău">
+        <input type="number" id="age" placeholder="Vârsta">
+        <button onclick="addProfile()">Înscrie-te</button>
+        <div class="profile-list" id="profiles"></div>
+    </div>
+
+    <script>
+        function addProfile() {
+            let name = document.getElementById('name').value;
+            let age = document.getElementById('age').value;
+            if (name && age) {
+                let profileList = document.getElementById('profiles');
+                let profile = document.createElement('p');
+                profile.textContent = `${name}, ${age} ani`;
+                profileList.appendChild(profile);
+                document.getElementById('name').value = '';
+                document.getElementById('age').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
